@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2022-07-29 15:22:35
+  end_time: 2022-07-29 15:22:35
+  minimum_person: 1
+  maximum_person: 1
+  last_booking_time: 2022-07-29 15:22:35
+  is_recuring_schedule: false
+  meeting_point: MyString
+  destination: MyString
+
+two:
+  start_time: 2022-07-29 15:22:35
+  end_time: 2022-07-29 15:22:35
+  minimum_person: 1
+  maximum_person: 1
+  last_booking_time: 2022-07-29 15:22:35
+  is_recuring_schedule: false
+  meeting_point: MyString
+  destination: MyString

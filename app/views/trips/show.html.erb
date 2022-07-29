@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @trip.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @trip.end_time %>
+</p>
+
+<p>
+  <strong>Minimum person:</strong>
+  <%= @trip.minimum_person %>
+</p>
+
+<p>
+  <strong>Maximum person:</strong>
+  <%= @trip.maximum_person %>
+</p>
+
+<p>
+  <strong>Last booking time:</strong>
+  <%= @trip.last_booking_time %>
+</p>
+
+<p>
+  <strong>Is recuring schedule:</strong>
+  <%= @trip.is_recuring_schedule %>
+</p>
+
+<p>
+  <strong>Meeting point:</strong>
+  <%= @trip.meeting_point %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @trip.destination %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= User.find(@trip.user_id).name %>
+</p>
+
+<% if current_user.role.name == 'travel_agent' && current_user.id == @trip.user_id %>
+  <%= link_to 'Edit', edit_trip_path(@trip) %> |
+<% end %>
+
+<%= link_to 'Back', trips_path %>

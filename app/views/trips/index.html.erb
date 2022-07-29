@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of trip</th>
+      <th>Created by</th>
+      <th>Destination</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.start_time %></td>
+        <td><%= User.find(trip.user_id).name %></td>
+        <td><%= trip.destination %></td>
+        <td><%= link_to 'Show', trip %></td>
+        <% if current_user.role.name == 'travel_agent' && current_user.id == trip.user_id %>
+          <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+          <td><%= link_to 'Delete', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+<br>
+
+<% if current_user.role.name == 'travel_agent' %>
+  <%= link_to 'New Trip', new_trip_path %><br>
+<% end %>
+
+<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
