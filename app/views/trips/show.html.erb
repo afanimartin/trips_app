@@ -42,7 +42,7 @@
 
 <p>
   <strong>Created by:</strong>
-  <%= User.find(@trip.user_id).name %>
+  <%= current_user.find_trip_creator(@trip.user_id).name %>
 </p>
 
 <% if current_user.role.name == 'travel_agent' && current_user.id == @trip.user_id %>

@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def is_travel_agent?
     role.name == 'travel_agent'
   end
+
+  def find_trip_creator(id)
+    User.find(id)
+  end
 end

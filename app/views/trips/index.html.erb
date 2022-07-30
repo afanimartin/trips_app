@@ -16,7 +16,7 @@
     <% @trips.each do |trip| %>
       <tr>
         <td><%= trip.start_time %></td>
-        <td><%= User.find(trip.user_id).name %></td>
+        <td><%= current_user.find_trip_creator(trip.user_id).name %></td>
         <td><%= trip.destination %></td>
         <td><%= link_to 'Show', trip %></td>
         <% if current_user.role.name == 'travel_agent' && current_user.id == trip.user_id %>

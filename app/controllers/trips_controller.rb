@@ -73,6 +73,6 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.require(:trip).permit(:start_time, :end_time, :minimum_person, :maximum_person, :last_booking_time, :is_recuring_schedule, :meeting_point, :destination).merge(user_id: current_user.id)
+      params.require(:trip).permit(:title, :start_time, :end_time, :maximum_person, :last_booking_time, :meeting_point, :destination, :trip_cost, :phone_number, :accomodation, :activities).merge(user_id: current_user.id)
     end
 end
